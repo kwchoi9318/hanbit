@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 <link rel="stylesheet" href="../../css/member.css" />
-</head>
-<body>
+
 <div class="box">
 	
 		<form action="${context}/member/result/delete_result.jsp" method = "post">
@@ -30,5 +29,5 @@
 	</a>
 	</div>
 	
-</body>
+
 </html>

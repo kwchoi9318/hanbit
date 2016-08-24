@@ -1,5 +1,4 @@
 var grade = (function(){
-	
 		return {
 			init:function(){
 				$('#grade_content').addClass('box');

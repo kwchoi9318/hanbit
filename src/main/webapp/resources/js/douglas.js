@@ -5,14 +5,14 @@ var douglas = (function(){
 	var context = sessionStorage.getItem("context");
 	return {
 		init : function() {
-			document.querySelector('#bt_bom').addEventListener('click',function(){move(context,'bom');},false);
-			document.querySelector('#bt_dom').addEventListener('click',function(){move(context,'dom');},false);
-			document.querySelector('#bt_kaup').addEventListener('click',function(){move(context,'kaup');},false);
-			document.querySelector('#bt_account').addEventListener('click',function(){move(context,'account');},false);
+			$('#bt_bom').click(function(){move(context,'bom');});
+			$('#bt_dom').click(function(){move(context,'dom');});
+			$('#bt_kaup').click(function(){move(context,'kaup');});
+			$('#bt_account').click(function(){move(context,'account');});
 		}
 	};
 })();
-var account = (function(){
+var account2 = (function(){
 	var _account_no,_money;
 	var setAccountNo = function(account_no){this._account_no=account_no;};
 	var getAccountNo = function(){return this._account_no;};
@@ -24,28 +24,28 @@ var account = (function(){
 		setMoney : setMoney,
 		getMoney : getMoney,
 		init : function() {
-			document.querySelector('#bt_spec_show').addEventListener('click',member.spec,false);
-			document.querySelector('#bt_make_account').addEventListener('click',this.spec,false);
-			document.querySelector('#bt_deposit').addEventListener('click',this.deposit,false);
-			document.querySelector('#bt_withdraw').addEventListener('click',this.withdraw,false);
+			$('#bt_spec_show').click(member.spec);
+			$('#bt_make_account').click(this.spec);
+			$('#bt_deposit').click(this.deposit);
+			$('#bt_withdraw').click(this.withdraw);
 		},
 		spec : function(){
 			setAccountNo(Math.floor(Math.random()*899999)+100000);
 			setMoney(0);
-			document.querySelector('#result_account').innerHTML = getAccountNo();
+			$('#result_account').innerHTML = getAccountNo();
 		},
 		deposit : function (){
-			var input_money = Number(document.querySelector('#money').value);
+			var input_money = Number($('#money').value);
 			var rest_money = getMoney();
 			console.log('인풋 머니 타입 체크 : '+(typeof input_money === 'number'));
 			console.log('잔액 타입 체크 : '+(typeof rest_money === 'number'));
 			setMoney(input_money+rest_money);
 			console.log('입금액 : '+getMoney());
-			document.querySelector('#rest_money').innerHTML=getMoney();
+			$('#rest_money').innerHTML=getMoney();
 		},
 		withdraw : function (){
-			setMoney(document.querySelector('#money').value);
-			document.querySelector('#rest_money').innerHTML='-'+getMoney();
+			setMoney($('#money').value);
+			$('#rest_money').innerHTML='-'+getMoney();
 		}
 	};
 })();
@@ -70,10 +70,10 @@ var member = (function(){
 		getSSN : getSSN,
 		getGender : getGender,
 		spec : function (){
-			console.log('SET SSN'+document.querySelector('#ssn').value);
-			setSSN(document.querySelector('#ssn').value);
+			console.log('SET SSN'+$('#ssn').value);
+			setSSN($('#ssn').value);
 			console.log('GET SSN'+getSSN());
-			setName(document.querySelector('#name').value);
+			setName($('#name').value);
 			var now = new Date().getFullYear();
 			var ssnArr = getSSN().split("-");
 			var ageResult1 = ssnArr[0];
@@ -102,9 +102,9 @@ var member = (function(){
 				break;
 
 		}	
-			document.querySelector('#result_name').innerHTML = getName();
-			document.querySelector('#result_age').innerHTML = getAge();
-			document.querySelector('#result_gender').innerHTML = getGender();
+			$('#result_name').innerHTML = getName();
+			$('#result_age').innerHTML = getAge();
+			$('#result_gender').innerHTML = getGender();
 		}
 		
 	};	
@@ -117,9 +117,9 @@ var kaup = (function(){
 		},
 		calc : function (){
 			alert('카우푸 칼크 클릭');
-			var name=document.querySelector('#name').value;
-			var height=document.querySelector('#height').value;
-			var weight=document.querySelector('#weight').value;
+			var name=$('#name').value;
+			var height=$('#height').value;
+			var weight=$('#weight').value;
 			console.log('name'+name);
 			console.log('height'+height);
 			console.log('weight'+weight);

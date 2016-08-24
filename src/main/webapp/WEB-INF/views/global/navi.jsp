@@ -7,22 +7,6 @@ width:100%;background-color: #333">${user.name}님 환영합니다</div>
 		<li><a href="#" id="a_member">회원관리</a></li>
 		<li><a href="#" id="a_grade">성적관리</a></li>
 		<li><a href="#" id="a_account">계좌관리</a></li>
-		<li><a href="#" id="a_shool">학교소개</a></li>
+		<li><a href="#" id="a_school">학교소개</a></li>
 	</ul>
 </div>
-<script type="text/javascript">
-$(function() {
-	$('#a_member').click(function(){
-		location.href = "${context}/member.do";
-	});
-	$('#a_grade').click(function(){
-		location.href = "${context}/grade.do";
-	});
-	$('#a_account').click(function(){
-		location.href = "${context}/account.do";
-	});
-	$('#a_shool').click(function(){
-		location.href = "${context}/global.do?page=school_info";
-	});
-});
-</script>
