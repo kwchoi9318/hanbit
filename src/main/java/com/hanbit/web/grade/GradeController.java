@@ -18,5 +18,31 @@ public class GradeController {
 		logger.info("GradeController moveMain() locale is {}",locale);
 		return "grade/content.tiles";
 	}
+	@RequestMapping("/count")
+	public String moveCount(Locale locale,Model model){
+		logger.info("GradeController moveCount() locale is {}",locale);
+		return "grade/count.tiles";
+	}
+	@RequestMapping("/delete")
+	public String moveDelete(Locale locale,Model model){
+		logger.info("GradeController moveMain() locale is {}",locale);
+		return "grade/delete.tiles";
+	}
+	@RequestMapping("/regist")
+	public String moveRegist(Locale locale,Model model){
+		logger.info("GradeController moveRegist() locale is {}",locale);
+		return "grade/regist.tiles";
+	}
+	@RequestMapping("/search")
+	public String moveSearch(Locale locale,Model model){
+		logger.info("GradeController moveSearch() locale is {}",locale);
+		return "grade/search.tiles";
+	}
+	@RequestMapping("/update")
+	public String moveUpdate(Locale locale,Model model){
+		logger.info("GradeController moveMain() locale is {}",locale);
+		return "grade/update.tiles";
+	}
+	
 	
 }
